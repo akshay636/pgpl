@@ -18,7 +18,11 @@ const AdmissionCAT = () => {
   console.log('isVisible:', isVisible); // Debug: Check if isVisible state changes
 
   return (
-    <div className={`${styles.admissionOpen} bg-sky-400 ${isVisible ? styles.visible : ''}`}>
+    <div
+      className={`${styles.admissionOpen} bg-sky-400 ${
+        isVisible ? styles.visible : ''
+      }`}
+    >
       Admission Open {currentYear}
     </div>
   );

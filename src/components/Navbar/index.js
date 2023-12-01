@@ -1,9 +1,9 @@
-'use client'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import Button from '../Button/Button'
-import useIsMobile from '@/hooks/useIsMobile'
-import Dropdown from '../Dropdown/Dropdown'
+'use client';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import Button from '../Button/Button';
+import useIsMobile from '@/hooks/useIsMobile';
+import Dropdown from '../Dropdown/Dropdown';
 
 const headerData = [
   'Home',
@@ -15,29 +15,26 @@ const headerData = [
   'Campus Life',
   'News',
   'Contact Us',
-]
+];
 
 const Navbar = () => {
-  const [showDepartment, setShowDepartment] = useState(false)
+  const [showDepartment, setShowDepartment] = useState(false);
   const isMobile = useIsMobile();
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
   const handleDepartment = () => {
-    setShowDepartment(!showDepartment)
-  }
+    setShowDepartment(!showDepartment);
+  };
   const hanldeMobileMenu = () => {
-    setShowMenu(!showMenu)
-  }
-  useEffect(()=>{
-    setShowMenu(isMobile)
-  },[isMobile])
+    setShowMenu(!showMenu);
+  };
+  useEffect(() => {
+    setShowMenu(isMobile);
+  }, [isMobile]);
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div className="flex flex-wrap flex-row justify-between items-center mx-auto max-w-screen p-4">
-        <a
-          href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src="https://www.theskclnct.com/images/skclnct_group_logo.png"
             className="h-8"
@@ -45,7 +42,7 @@ const Navbar = () => {
           />
         </a>
         <Button
-          onClick ={hanldeMobileMenu}
+          onClick={hanldeMobileMenu}
           btnType="secondary"
           data-collapse-toggle="mega-menu-full"
           type="button"
@@ -72,13 +69,17 @@ const Navbar = () => {
         </Button>
         <div
           id="mega-menu-full"
-          className={`${showMenu?'hidden':'flex'} items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
+          className={`${
+            showMenu ? 'hidden' : 'flex'
+          } items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
         >
-          <ul className={`flex flex-col p-2 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700`}>
+          <ul
+            className={`flex flex-col p-2 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700`}
+          >
             {headerData.map((name) => (
-              <li key={name} className={`${showMenu?'hidden':'flex'}`}>
+              <li key={name} className={`${showMenu ? 'hidden' : 'flex'}`}>
                 {name === 'Departments' ? (
-              <Dropdown name='Departments'/>
+                  <Dropdown name="Departments" />
                 ) : (
                   <Link
                     legacyBehavior
@@ -178,7 +179,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

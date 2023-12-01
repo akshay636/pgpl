@@ -1,11 +1,14 @@
 const Footer = () => {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-1">
           <div className="text-teal-600">
-           <img src="https://www.lnctindore.edu.in/wp-content/uploads/2021/08/LNCT-IND-1.png" className="w-36 h-8"/>
+            <img
+              src="https://www.lnctindore.edu.in/wp-content/uploads/2021/08/LNCT-IND-1.png"
+              className="w-36 h-8"
+            />
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
@@ -92,7 +95,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                   Transpotation
+                    Transpotation
                   </a>
                 </li>
 
@@ -364,7 +367,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
